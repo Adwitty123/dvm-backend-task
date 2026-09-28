@@ -1,0 +1,7 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{% block title %}Community Polls{% endblock %}</title><link rel="stylesheet" href="{% static 'style.css' %}"></head>
+<body><header><a href="/">Community Polls</a><nav><a href="{% url 'polls:create' %}">Create a poll</a>{% if user.is_authenticated %}<span>{{ user.username }}</span><form class="inline" method="post" action="{% url 'logout' %}">{% csrf_token %}<button>Log out</button></form>{% else %}<a href="{% url 'login' %}">Log in</a><a href="{% url 'signup' %}">Sign up</a>{% endif %}</nav></header>
+<main>{% for message in messages %}<p class="notice" role="status">{{ message }}</p>{% endfor %}{% block content %}{% endblock %}</main>
+<footer>DVM Backend Task · Part A</footer></body></html>

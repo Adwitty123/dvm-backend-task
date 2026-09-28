@@ -1,0 +1,7 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{% block title %}Music Passport{% endblock %}</title><link rel="stylesheet" href="{% static 'style.css' %}"></head>
+<body><header><a href="/">Music Passport</a><nav><a href="{% url 'music:charts' %}">Country charts</a><a href="{% url 'music:search' %}">Search</a><a href="{% url 'music:passport' %}">Music Passport</a></nav></header>
+<main>{% for message in messages %}<p class="notice" role="status">{{ message }}</p>{% endfor %}{% block content %}{% endblock %}</main>
+<footer>DVM Backend Task · Part B · Music data from <a href="https://www.last.fm">Last.fm</a></footer></body></html>

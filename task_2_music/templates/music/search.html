@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Find your next repeat.</h1><p>Search the Last.fm catalogue for artists, albums, or tracks.</p>
+<form class="panel" method="get">{{ form.as_p }}<button>Search music</button></form>
+{% if error %}<p class="notice error" role="alert">{{ error }}</p>{% endif %}
+{% if result %}<section class="card"><h2>Results</h2>{% include 'music/items.html' with items=result.items %}</section><nav aria-label="Pagination">{% if result.page > 1 %}<a href="?{{ previous_query }}">Previous</a>{% endif %}<span>Page {{ result.page }}</span>{% if result.has_next %}<a href="?{{ next_query }}">Next</a>{% endif %}</nav>{% endif %}{% endblock %}

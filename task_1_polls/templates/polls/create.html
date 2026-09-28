@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>Create a community poll</h1><form class="panel" method="post">{% csrf_token %}{{ form.as_p }}{% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}<button>Publish poll</button></form>{% endblock %}

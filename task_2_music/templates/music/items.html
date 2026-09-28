@@ -1,0 +1,1 @@
+<ol>{% for item in items %}<li>{% if item.url %}<a href="{{ item.url }}" rel="noopener noreferrer">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if item.artist %}<span class="muted"> — {{ item.artist }}</span>{% endif %}</li>{% empty %}<li>No results in this sample.</li>{% endfor %}</ol>

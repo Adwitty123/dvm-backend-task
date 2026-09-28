@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block content %}<h1>{{ question.question_text }}</h1><p>{{ total }} vote{{ total|pluralize }} in total</p>
+{% for row in rows %}<div class="card"><h2>{{ row.choice.choice_text }}</h2><label>{{ row.choice.votes }} vote{{ row.choice.votes|pluralize }} · {{ row.percentage }}%<progress value="{{ row.percentage }}" max="100">{{ row.percentage }}%</progress></label></div>{% endfor %}<a href="{% url 'polls:detail' question.pk %}">Back to poll</a>{% endblock %}

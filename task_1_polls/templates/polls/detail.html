@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block title %}{{ question.question_text }}{% endblock %}
+{% block content %}<h1>{{ question.question_text }}</h1>{% if question.closes_at %}<p class="muted">Closes {{ question.closes_at|date:'M d, Y H:i' }} UTC</p>{% endif %}
+{% if error_message %}<p class="error" role="alert">{{ error_message }}</p>{% endif %}
+{% if not question.is_open %}<p class="notice">Voting has closed.</p>{% elif has_voted %}<p class="notice">Your vote has been recorded.</p>{% elif user.is_authenticated %}
+<form class="panel" method="post" action="{% url 'polls:vote' question.pk %}">{% csrf_token %}<fieldset><legend>Choose one answer</legend>{% for choice in question.choice_set.all %}<label class="choice"><input type="radio" name="choice" value="{{ choice.pk }}" required> {{ choice.choice_text }}</label>{% endfor %}</fieldset><p><button>Cast vote</button></p></form>
+{% else %}<p><a href="{% url 'login' %}?next={{ request.path|urlencode }}">Log in to vote</a> or <a href="{% url 'signup' %}">create an account</a>.</p>{% endif %}<a href="{% url 'polls:results' question.pk %}">View results</a>{% endblock %}
