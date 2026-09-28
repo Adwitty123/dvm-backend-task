@@ -9,10 +9,14 @@ Two independent Django projects in one repository, covering the recruitment assi
 
 ## Requirements
 
-- Python 3.10 or newer; Python 3.12 is recommended and used by CI.
+- Python 3.12, 3.13, or 3.14. Python 3.12 is used by CI.
 - pip and a virtual environment.
 - A Last.fm API key for Part B's live data. Part A and all automated tests work without one.
 - SQLite is included with Python. The projects use separate databases.
+
+## Django version
+
+Both projects use Django 6.1. The lock file pins Django 6.1.1 and Debug Toolbar 6.3.0. To upgrade an existing checkout, use Python 3.12 or newer, install `python -m pip install -r requirements-lock.txt`, and run `migrate` for each project. Existing poll data and migrations are retained.
 
 ## Quick start
 
@@ -105,8 +109,8 @@ For a real deployment, configure HTTPS, a production WSGI server, static-file se
 
 ## References
 
-- [Django tutorial, parts 1–8](https://docs.djangoproject.com/en/5.2/intro/tutorial01/)
-- [Django testing tutorial](https://docs.djangoproject.com/en/5.2/intro/tutorial05/)
+- [Django tutorial, parts 1–8](https://docs.djangoproject.com/en/6.1/intro/tutorial01/)
+- [Django testing tutorial](https://docs.djangoproject.com/en/6.1/intro/tutorial05/)
 - [Django Debug Toolbar installation](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
 - [Last.fm API documentation](https://www.last.fm/api)
 

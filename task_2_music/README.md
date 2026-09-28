@@ -4,6 +4,8 @@ A Django application for browsing country charts, searching Last.fm's catalogue,
 
 ## Setup
 
+Requires Python 3.12 or newer and Django 6.1. The shared lock file pins Django 6.1.1.
+
 Install the shared repository requirements in a virtual environment. Obtain a Last.fm API key from <https://www.last.fm/api/account/create>.
 
 From the repository root:

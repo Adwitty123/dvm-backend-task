@@ -1,5 +1,5 @@
-Django>=5.2,<5.3
-django-debug-toolbar>=5.2,<7
+Django>=6.1.1,<6.2
+django-debug-toolbar>=6.3,<7
 requests>=2.32.4,<3
 python-dotenv>=1.1,<2
 pycountry>=24.6,<25

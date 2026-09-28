@@ -4,6 +4,8 @@ A Django tutorial-style polling application with questions, choices, results, an
 
 ## Setup
 
+Requires Python 3.12 or newer and Django 6.1. The shared lock file pins Django 6.1.1.
+
 From the repository root, install the shared requirements in an activated virtual environment, then run:
 
 ```bash
